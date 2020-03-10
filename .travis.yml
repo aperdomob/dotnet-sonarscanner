@@ -5,8 +5,7 @@ sudo: 'required'
 services:
   - 'docker'
 
-deploy:
-  provider: script
-  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker build . --tag aperdomob/dotnet-sonnarscanner  && docker push aperdomob/dotnet-sonnarscanner
-  on:
-    branch: master
+script:
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker build . --tag aperdomob/dotnet-sonnarscanner
+  - docker push aperdomob/dotnet-sonnarscanner
