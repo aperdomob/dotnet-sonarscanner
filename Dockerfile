@@ -1,9 +1,5 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0
 
-# RUN apt-get install
-
-RUN dotnet tool install --global dotnet-sonarscanner --version 4.8.0
-
 RUN apt-get update \
     && apt-get dist-upgrade -y
 
